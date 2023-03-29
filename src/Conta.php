@@ -5,12 +5,14 @@ class Conta
     private $cpf;
     private $titular;
     private $saldo;
+    private static $totalContas = 0;
 
     public function __construct(string $titular, string $cpf)
     {
         $this->titular = $titular;
         $this->cpf = $cpf;
         $this->saldo = 0;
+        self::$totalContas++;
     }
 
     public function sacar(float $valor): void
@@ -63,5 +65,9 @@ class Conta
     public function setTitular(string $titular)
     {
         $this->titular = $titular;
+    }
+
+    public static function getTotalContas(){
+        return self::$totalContas;
     }
 }
