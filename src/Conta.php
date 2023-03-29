@@ -15,6 +15,10 @@ class Conta
         self::$totalContas++;
     }
 
+    public function __destruct(){
+        self::$totalContas--;
+    }
+
     public function sacar(float $valor): void
     {
         if($valor > $this->saldo){
