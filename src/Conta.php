@@ -4,7 +4,14 @@ class Conta
 {
     private $cpf;
     private $titular;
-    private $saldo = 0;
+    private $saldo;
+
+    public function __construct(string $titular, string $cpf)
+    {
+        $this->titular = $titular;
+        $this->cpf = $cpf;
+        $this->saldo = 0;
+    }
 
     public function sacar(float $valor): void
     {
