@@ -2,9 +2,9 @@
 
 class Conta
 {
-    public $cpf;
-    public $titular;
-    public $saldo = 0;
+    private $cpf;
+    private $titular;
+    private $saldo = 0;
 
     public function sacar(float $valor): void
     {
