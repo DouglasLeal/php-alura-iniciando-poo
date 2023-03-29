@@ -23,13 +23,38 @@ class Conta
             $this->saldo += $valor;
         }
     }
-
-    public function transferir(float $valor, Conta $destino): void{
+    public function transferir(float $valor, Conta $destino): void
+    {
         if($valor > $this->saldo){
             echo "Saldo insuficiente.";
         }else{
             $this->sacar($valor);
             $destino->depositar($valor);
         }
+    }
+
+    public function getSaldo(): float
+    {
+        return $this->saldo;
+    }
+
+    public function getCPF(): string
+    {
+        return $this->cpf;
+    }
+
+    public function getTitular(): string
+    {
+        return $this->titular;
+    }
+
+    public function setCPF(string $cpf)
+    {
+        $this->cpf = $cpf;
+    }
+
+    public function setTitular(string $titular)
+    {
+        $this->titular = $titular;
     }
 }
