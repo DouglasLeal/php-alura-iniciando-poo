@@ -2,31 +2,31 @@
 
 class Titular
 {
-    private string $cpf;
-    private string $nome;
+    private $cpf;
+    private $nome;
 
-    public function __construct(string $nome, string $cpf){
-        $this->nome = $nome;
-        $this->cpf = $cpf;
-    }
-
-    public function getCPF(): string
+    public function __construct(CPF $cpf, string $nome)
     {
-        return $this->cpf;
+        $this->cpf = $cpf;
+        $this->validaNomeTitular($nome);
+        $this->nome = $nome;
     }
 
-    public function getNome(): string
+    public function recuperaCpf(): string
+    {
+        return $this->cpf->recuperaNumero();
+    }
+
+    public function recuperaNome(): string
     {
         return $this->nome;
     }
 
-    public function setCPF(string $cpf)
+    private function validaNomeTitular(string $nomeTitular)
     {
-        $this->cpf = $cpf;
-    }
-
-    public function setNome(string $nome)
-    {
-        $this->nome = $nome;
+        if (strlen($nomeTitular) < 5) {
+            echo "Nome precisa ter pelo menos 5 caracteres";
+            exit();
+        }
     }
 }
