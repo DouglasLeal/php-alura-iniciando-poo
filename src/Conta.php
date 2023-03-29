@@ -2,15 +2,13 @@
 
 class Conta
 {
-    private $cpf;
     private $titular;
     private $saldo;
     private static $totalContas = 0;
 
-    public function __construct(string $titular, string $cpf)
+    public function __construct(Titular $titular)
     {
         $this->titular = $titular;
-        $this->cpf = $cpf;
         $this->saldo = 0;
         self::$totalContas++;
     }
@@ -51,22 +49,12 @@ class Conta
         return $this->saldo;
     }
 
-    public function getCPF(): string
-    {
-        return $this->cpf;
-    }
-
-    public function getTitular(): string
+    public function getTitular(): Titular
     {
         return $this->titular;
     }
 
-    public function setCPF(string $cpf)
-    {
-        $this->cpf = $cpf;
-    }
-
-    public function setTitular(string $titular)
+    public function setTitular(Titular $titular)
     {
         $this->titular = $titular;
     }
