@@ -1,9 +1,7 @@
 <?php
 
-class Titular
+class Titular extends Pessoa
 {
-    private $cpf;
-    private $nome;
     private $endereco;
 
     public function __construct(CPF $cpf, string $nome, Endereco $endereco)
@@ -14,9 +12,9 @@ class Titular
         $this->endereco = $endereco;
     }
 
-    public function recuperaCpf(): string
+    public function getCpf(): string
     {
-        return $this->cpf->recuperaNumero();
+        return $this->cpf->get;
     }
 
     public function recuperaNome(): string
