@@ -2,9 +2,9 @@
 
 namespace Alura\Banco\Models\Conta;
 
-use Alura\Banco\Models\Pessoa;
 use Alura\Banco\Models\CPF;
 use Alura\Banco\Models\Endereco;
+use Alura\Banco\Models\Pessoa;
 
 class Titular extends Pessoa
 {
