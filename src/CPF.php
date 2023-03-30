@@ -1,6 +1,8 @@
 <?php
 
-class CPF
+namespace Alura\Banco\Models;
+
+final class CPF
 {
     private $numero;
 
